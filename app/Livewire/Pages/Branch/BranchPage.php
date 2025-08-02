@@ -54,7 +54,7 @@ class BranchPage extends Component
     }
 
     #[On('edit-branch')]
-    public function editUser($branchId)
+    public function editBranch($branchId)
     {
         $branch = Branch::find($branchId);
 
@@ -79,6 +79,7 @@ class BranchPage extends Component
         $this->branchModal = false;
         $this->editingBranchId = null;
         $this->form->reset();
+        $this->dispatch('branch-created');
     }
 
     #[Title('Filiais')]
