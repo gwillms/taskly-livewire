@@ -10,7 +10,30 @@
         <x-form wire:submit="save">
             <div class="grid grid-cols-4 gap-2 p-4">
                 <div class="col-span-4">
-                    <x-input label="Status" wire:model="form.status" placeholder="Status" clearable />
+                    <x-select label="Status" wire:model="form.status_id" :options="$statusList"
+                        placeholder="Selecione o status" />
+                </div>
+                <div class="col-span-4">
+                    <x-select label="Colaborador" wire:model="form.employee_id" :options="$employeeList"
+                        placeholder="Selecione o colaborador" />
+                </div>
+                <div class="col-span-4">
+                    <x-select label="Filial" wire:model="form.filial_id" :options="$filialList"
+                        placeholder="Selecione a filial" />
+                </div>
+                <div class="col-span-4">
+                    <x-select label="Setor" wire:model="form.setor_id" :options="$setorList"
+                        placeholder="Selecione o setor" />
+                </div>
+                <div class="col-span-4">
+                    <x-textarea class="resize-none" label="Chamado" wire:model="form.chamado"
+                        placeholder="Descreva o chamado..." rows="5" />
+                </div>
+                <div class="col-span-4">
+                    <x-image-library wire:model="files" wire:library="anexo" :preview="$anexo" label="Anexos de Imagem"
+                        hint="Max 1MB cada" change-text="Alterar" crop-text="Recortar" remove-text="Remover"
+                        crop-title-text="Recortar imagem" crop-cancel-text="Cancelar" crop-save-text="Salvar"
+                        add-files-text="Adicionar imagens" />
                 </div>
             </div>
             <x-slot:actions>
