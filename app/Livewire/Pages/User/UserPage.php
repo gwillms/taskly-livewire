@@ -13,7 +13,6 @@ use Mary\Traits\Toast;
 class UserPage extends Component
 {
     use Toast;
-
     public UserForm $form;
     public bool $userModal = false;
     public ?int $editingUserId = null;
@@ -78,7 +77,7 @@ class UserPage extends Component
         $this->form->reset();
     }
 
-    #[Title('Usuários')]
+    #[Title('Usuário')]
     public function render()
     {
         return view('livewire.pages.user.user-page');

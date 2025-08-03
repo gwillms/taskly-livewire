@@ -6,8 +6,8 @@ use App\Livewire\Pages\DashboardPage;
 use App\Livewire\Pages\Employee\EmployeePage;
 use App\Livewire\Pages\Section\SectionPage;
 use App\Livewire\Pages\Status\StatusPage;
+use App\Livewire\Pages\Task\TaskPage;
 use App\Livewire\Pages\User\UserPage;
-use App\Livewire\Tasks\TasksPage;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,7 +16,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', DashboardPage::class)->name('dashboard');
-    Route::get('/tasks', TasksPage::class)->name('tasks');
+    Route::get('/tasks', TaskPage::class)->name('tasks');
     Route::get('/employee', EmployeePage::class)->name('employee');
     Route::get('/branch', BranchPage::class)->name('branch');
     Route::get('/section', SectionPage::class)->name('section');

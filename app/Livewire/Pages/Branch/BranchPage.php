@@ -82,7 +82,7 @@ class BranchPage extends Component
         $this->dispatch('branch-created');
     }
 
-    #[Title('Filiais')]
+    #[Title('Filial')]
     public function render()
     {
         return view('livewire.pages.branch.branch-page');
